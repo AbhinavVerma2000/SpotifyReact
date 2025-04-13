@@ -1,0 +1,113 @@
+[
+  {
+      "id":1,
+    "title": "Demons",
+    "thumbnail": "https://i.ytimg.com/vi/MA0aCUxItYA/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAQ9viWK7n8lGYP1aippPss9zMeNQ",
+    "musicUrl": "https://onlinetestcase.com/wp-content/uploads/2023/06/2-MB-MP3.mp3",
+    "duration": "1:56",
+    "artistName": "Imagine Dragons"
+  },
+  {
+      "id":2,
+    "title": "Mouth of the river ",
+    "thumbnail": "https://i.ytimg.com/vi/YiZCzG4RF1M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBPnuNvm0p6JAilZjFkQ9v8z2LMQ",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-12.mp3",
+    "duration": "03:28",
+    "artistName": "Imagine Dragons"
+  },
+  {
+      "id":3,
+    "title": "Ghost Stories",
+    "thumbnail": "https://i.ytimg.com/vi/l2UJmdM9Omw/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDHYDCeW1IDXhBaXfAO5wMKIBCQlg",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-1.mp3",
+    "duration": "04:15",
+    "artistName": "Coldplay"
+  },
+  {
+      "id":4,
+    "title": "Sparks ",
+    "thumbnail": "https://i.ytimg.com/vi/s9hDCFVg0dY/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IFIoEzAP&rs=AOn4CLCTLTwtUw5oGsXY-SfcT8JeG-cVJg",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-2.mp3",
+    "duration": "03:50",
+    "artistName": "Coldplay"
+  },
+  {
+      "id":5,
+    "title": "Viva La Vida",
+    "thumbnail": "https://i.ytimg.com/vi/WcOmJ74OIns/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfdK3GQ4ryBi4ez6RI8807YfQgfA",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-3.mp3",
+    "duration": "04:22",
+    "artistName": "Coldplay"
+  },
+  {
+      "id":6,
+    "title": "Hymn for the weekend",
+
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-3.mp3",
+"thumbnail": "https://i.ytimg.com/vi/YykjpeuMNEk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZflSqE-o3SPhWckBBgF0Oe-QAjw",
+    "duration": "03:35",
+    "artistName": "Coldplay"
+  },
+  {
+      "id":7,
+    "title": "Pain",
+    "thumbnail": "https://i.ytimg.com/vi/IrvqXuCwVkc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5uu2U0hfAdOgswrEBDeVYfL2kww",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-5.mp3",
+    "duration": "03:58",
+    "artistName": "Ryan Jones"
+  },
+  {
+      "id":9,
+    "title": "Velocity",
+    "thumbnail": "https://i.ytimg.com/vi/kJQP7kiw5Fk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBH3EhyCr_aZDODXzXVDL-taforQw",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-6.mp3",
+    "duration": "04:08",
+    "artistName": "Speedwave"
+  },
+  {
+      "id":10,
+    "title": "Crystal City",
+    "thumbnail": "https://i.ytimg.com/vi/vyFKMv2p_oQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAMvHrGsdiSP2CI9_URoU2FEwxQoQ",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-7.mp3",
+    "duration": "03:40",
+    "artistName": "Shimmer Drive"
+  },
+  {
+      "id":11,
+    "title": "Star Trails",
+    "thumbnail": "https://i.ytimg.com/vi/eUTKNkkOfF0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA_z1-sxJUUWLihOGolTB7OrB8V5A",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-8.mp3",
+    "duration": "03:48",
+    "artistName": "Galactic Dust"
+  },
+  {
+      "id":12,
+    "title": "Echoes of Time",
+    "thumbnail": "https://i.ytimg.com/vi/P3RzHilaTfY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCpOO2NySD0_lTGmd4dXoaYi3lRPQ",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-9.mp3",
+    "duration": "04:30",
+    "artistName": "Chrono Drift"
+  },
+  
+  {
+    "id":13,
+    "title": "Digital Oasis",
+    "thumbnail": "https://i.ytimg.com/vi/rrfwuMgiVig/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCe3VzbI9ncEYM_cD8PobzhcaUDZw",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-10.mp3",
+    "duration": "03:43",
+    "artistName": "Pixel Bloom"
+  },
+  {
+      "id":14,
+    "title": "Eclipse Run",
+    "thumbnail": "https://i.ytimg.com/vi/e9qvxNycng0/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg4IF0oZTAP&rs=AOn4CLASPQj0HISUDWXhs07W0HreOdhsLA",
+    "musicUrl": "https://thetestdata.com/assets/audio/mp3/thetestdata-sample-mp3-11.mp3",
+    "duration": "04:00",
+    "artistName": "Shadow Beam"
+  }
+]
+
+
+
+
+
