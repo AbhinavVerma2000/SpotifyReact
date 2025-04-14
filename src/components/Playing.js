@@ -406,9 +406,7 @@ const Playing = ({
             />
             <img
               className="invert"
-              onClick={() => {
-                Sound();
-              }}
+              onClick={() => {Sound()}}
               style={{ height: "25px" }}
               src="volume.svg"
               alt=""
