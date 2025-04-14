@@ -49,6 +49,7 @@ const Songs = ({
       if (input === "") {
         setRes(songs);
       } else {
+        setRes([])
         songs.forEach((item) => {
           if (regex.test(item.title)) {
             const ind = res.findIndex((it) => it.id === item.id);
