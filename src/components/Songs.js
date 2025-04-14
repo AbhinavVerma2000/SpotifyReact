@@ -55,7 +55,7 @@ const Songs = ({
             if (ind !== -1) {
               setRes([
                 item,
-                ...res.filter((_, i) => i !== ind),
+                ...res.filter((ele) => ele.id !== item.id),
               ]);
             } else {
               setRes((prevRes) => [...prevRes, item]);
@@ -66,7 +66,7 @@ const Songs = ({
             if (ind !== -1) {
               setRes([
                 item,
-                ...res.filter((_, i) => i !== ind),
+                ...res.filter((ele) => ele.id !== item.id),
               ]);
             } else {
               setRes([...res, item]);
