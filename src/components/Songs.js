@@ -49,34 +49,18 @@ const Songs = ({
       if (input === "") {
         setRes(songs);
       } else {
-        setRes([])
+        const results = [];
         songs.forEach((item) => {
-          if (regex.test(item.title)) {
-            const ind = res.findIndex((it) => it.id === item.id);
-            if (ind !== -1) {
-              setRes([
-                item,
-                ...res.filter((ele) => ele.id !== item.id),
-              ]);
-            } else {
-              setRes((prevRes) => [...prevRes, item]);
-            }
-          }
-          if (regex.test(item.artistName)) {
-            const ind = res.findIndex((it) => it.id === item.id);
-            if (ind !== -1) {
-              setRes([
-                item,
-                ...res.filter((ele) => ele.id !== item.id),
-              ]);
-            } else {
-              setRes([...res, item]);
+          if (regex.test(item.title) || regex.test(item.artistName)) {
+            if (!results.find((it) => it.id === item.id)) {
+              results.push(item);
             }
           }
         });
+        setRes(results)
       }
     },
-    [songs, res]
+    [songs]
   );
 
   const Search = useCallback(
