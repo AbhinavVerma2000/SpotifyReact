@@ -81,8 +81,8 @@ const Songs = ({
 
   function handleClick(e, song) {
     handleQ(song);
-    const x = e.clientX - e.target.offsetLeft;
-    const y = e.clientY - e.target.offsetTop;
+    const x = (e.clientX - e.target.offsetLeft)/e.target.offsetWidth;
+    const y = (e.clientY - e.target.offsetTop)/e.target.offsetHeight;
     const el = document.createElement("div");
     const title = song.title.replaceAll(" ", "");
     const id = song.id;
@@ -95,8 +95,8 @@ const Songs = ({
     }
     parent.style.backgroundColor = "#bebebe44";
     el.classList.add("circle");
-    el.style.left = `${x}px`;
-    el.style.top = `${y}px`;
+    el.style.left = `${x*100}%`;
+    el.style.top = `${y*100}%`;
     setTimeout(() => {
       el.remove();
     }, 1000);
