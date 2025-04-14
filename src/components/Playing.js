@@ -65,7 +65,7 @@ const Playing = ({
   }; // Ensure this closing brace properly ends the `getPrev` function
 
   const getNext = React.useCallback(
-    (song) => {
+    async (song) => {
       let currentIndex = q.findIndex((item) => item.id === song.id);
       if (currentIndex < q.length - 1) {
         if (audioRef.current) {
@@ -75,7 +75,7 @@ const Playing = ({
         }
         let audio = new Audio(q[currentIndex + 1].musicUrl);
         setPS(q[currentIndex + 1]);
-        audio.play();
+        await audio.play();
         setPlaying(true);
         dispatch(updaterec(q[currentIndex + 1]));
         audioRef.current = audio;
@@ -95,7 +95,7 @@ const Playing = ({
     [audioRef, setPlaying, dispatch, volume, q, setPS]
   );
 
-  const getPrev = (song) => {
+  const getPrev = async (song) => {
     let currentIndex = q.findIndex((item) => item.id === song.id);
     if (currentIndex > 0) {
       if (audioRef.current) {
@@ -105,7 +105,7 @@ const Playing = ({
       }
       let audio = new Audio(q[currentIndex - 1].musicUrl);
       setPS(q[currentIndex - 1]);
-      audio.play();
+      await audio.play();
       setPlaying(true);
       dispatch(updaterec(q[currentIndex - 1]));
       audioRef.current = audio;
@@ -140,7 +140,7 @@ const Playing = ({
     }
   }, [fav, ps]);
 
-  const playSong = (songUrl) => {
+  const playSong = async (songUrl) => {
     const audio = new Audio(songUrl);
     if (audioRef.current && playing) {
       setTime(audioRef.current.currentTime);
@@ -180,7 +180,7 @@ const Playing = ({
       setPlaying(false);
     }
     if (!playing) {
-      audio.play().then(() => {
+      await audio.play().then(() => {
         setPlaying(true);
         audioRef.current = audio;
         audioRef.current.volume = parseFloat(volume / 100);
