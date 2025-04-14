@@ -260,7 +260,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0rem;
-    z-index: "4";
+    z-index: 4;
   }
   .circle {
     border-radius: 100%;
@@ -273,6 +273,7 @@
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(0);
     animation: scale 0.5s ease;
+    z-index: 2;
   }
 
   @keyframes scale {
@@ -617,7 +618,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0rem;
-    z-index: "4";
+    z-index: 4;
   }
   .circle {
     border-radius: 100%;
@@ -630,6 +631,7 @@
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(0);
     animation: scale 0.5s ease;
+    z-index: 2;
   }
 
   @keyframes scale {
@@ -974,7 +976,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0rem;
-    z-index: "4";
+    z-index: 4;
   }
   .circle {
     border-radius: 100%;
@@ -987,6 +989,7 @@
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(0);
     animation: scale 0.5s ease;
+    z-index: 2;
   }
 
   @keyframes scale {
@@ -1120,6 +1123,7 @@
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(0);
     animation: scale 0.5s ease;
+    z-index: 2;
   }
 
   @keyframes scale {
