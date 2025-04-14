@@ -71,15 +71,17 @@ const Playing = ({
         if (audioRef.current) {
           audioRef.current.pause();
           audioRef.current.currentTime = 0;
+          audioRef.current.src = "";
+          audioRef.current.load(); // just to be extra safe
           setPlaying(false);
         }
         let audio = new Audio(q[currentIndex + 1].musicUrl);
         setPS(q[currentIndex + 1]);
         await audio.play();
-        setPlaying(true);
         dispatch(updaterec(q[currentIndex + 1]));
         audioRef.current = audio;
         audioRef.current.volume = parseFloat(volume / 100);
+        setPlaying(true);
         let mysong = q[currentIndex + 1];
         let title = mysong.title.replaceAll(" ", "");
         let id = mysong.id;
@@ -101,15 +103,17 @@ const Playing = ({
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current.src = "";
+        audioRef.current.load(); // just to be extra safe
         setPlaying(false);
       }
       let audio = new Audio(q[currentIndex - 1].musicUrl);
       setPS(q[currentIndex - 1]);
       await audio.play();
-      setPlaying(true);
       dispatch(updaterec(q[currentIndex - 1]));
       audioRef.current = audio;
       audioRef.current.volume = parseFloat(volume / 100);
+      setPlaying(true);
       let mysong = q[currentIndex - 1];
       let title = mysong.title.replaceAll(" ", "");
       let id = mysong.id;
@@ -336,13 +340,12 @@ const Playing = ({
           ></div>
           <div className="seekbar"></div>
         </div>
-        <div id="panel"
+        <div
+          id="panel"
           style={{ justifyContent: "space-between" }}
           className="flex align-center"
         >
-          <div
-            className="option"
-          >
+          <div className="option">
             <div ref={mref} style={{ visibility: "hidden" }} className="more">
               <img
                 ref={likedref}
@@ -355,9 +358,14 @@ const Playing = ({
                 alt=""
               />
             </div>
-            <img className="invert" onClick={() => {
-              moreOptions();
-            }} src="option.svg" alt="" />
+            <img
+              className="invert"
+              onClick={() => {
+                moreOptions();
+              }}
+              src="option.svg"
+              alt=""
+            />
           </div>
           <div
             style={{ justifyContent: "space-between", width: "10rem" }}
@@ -411,9 +419,7 @@ const Playing = ({
               alt=""
             />
           </div>
-          <div
-            className="vol"
-          >
+          <div className="vol">
             <div
               ref={ref}
               className="volslider"
@@ -438,7 +444,14 @@ const Playing = ({
                 alt=""
               />
             </div>
-            <img onClick={() => {Sound()}} className="invert" src="volume.svg" alt="" />
+            <img
+              onClick={() => {
+                Sound();
+              }}
+              className="invert"
+              src="volume.svg"
+              alt=""
+            />
           </div>
         </div>
       </div>
