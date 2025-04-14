@@ -53,9 +53,9 @@ const Songs = ({
           if (regex.test(item.title)) {
             const ind = res.findIndex((it) => it.id === item.id);
             if (ind !== -1) {
-              setRes((prevRes) => [
+              setRes([
                 item,
-                ...prevRes.filter((_, i) => i !== ind),
+                ...res.filter((_, i) => i !== ind),
               ]);
             } else {
               setRes((prevRes) => [...prevRes, item]);
@@ -64,12 +64,12 @@ const Songs = ({
           if (regex.test(item.artistName)) {
             const ind = res.findIndex((it) => it.id === item.id);
             if (ind !== -1) {
-              setRes((prevRes) => [
+              setRes([
                 item,
-                ...prevRes.filter((_, i) => i !== ind),
+                ...res.filter((_, i) => i !== ind),
               ]);
             } else {
-              setRes((prevRes) => [...prevRes, item]);
+              setRes([...res, item]);
             }
           }
         });
