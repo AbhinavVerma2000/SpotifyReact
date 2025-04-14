@@ -83,6 +83,7 @@ const Songs = ({
     handleQ(song);
     const x = (e.clientX - e.target.offsetLeft)/e.target.offsetWidth;
     const y = (e.clientY - e.target.offsetTop)/e.target.offsetHeight;
+    console.log(e.clientX, e.target.offsetLeft)
     const el = document.createElement("div");
     const title = song.title.replaceAll(" ", "");
     const id = song.id;
