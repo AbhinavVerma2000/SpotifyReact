@@ -253,7 +253,7 @@
     position: absolute;
     align-items: center;
     right: 1%;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     transition: all 1s ease;
     opacity: 0;
@@ -288,7 +288,7 @@
     width: 10rem;
     display: flex;
     position: absolute;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     padding: 2px;
     transition: all 1s ease;
@@ -611,7 +611,7 @@
     position: absolute;
     align-items: center;
     right: 1%;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     transition: all 1s ease;
     opacity: 0;
@@ -646,7 +646,7 @@
     width: 10rem;
     display: flex;
     position: absolute;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     padding: 2px;
     transition: all 1s ease;
@@ -969,7 +969,7 @@
     position: absolute;
     align-items: center;
     right: 1%;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     transition: all 1s ease;
     opacity: 0;
@@ -1004,7 +1004,7 @@
     width: 10rem;
     display: flex;
     position: absolute;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     padding: 2px;
     transition: all 1s ease;
@@ -1104,7 +1104,7 @@
     position: absolute;
     align-items: center;
     right: 10.5rem;
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     transition: all 1s ease;
     opacity: 0;
@@ -1140,7 +1140,7 @@
     position: absolute;
     right: 21rem;
     transform: translate(-50%, 0%);
-    background-color: #444;
+    backdrop-filter: blur(3px);
     border-radius: 2rem;
     padding-left: 1rem;
     transition: all 1s ease;
