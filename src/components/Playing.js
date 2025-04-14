@@ -341,9 +341,6 @@ const Playing = ({
           className="flex align-center"
         >
           <div
-            onClick={() => {
-              moreOptions();
-            }}
             className="option"
           >
             <div ref={mref} style={{ visibility: "hidden" }} className="more">
@@ -358,7 +355,9 @@ const Playing = ({
                 alt=""
               />
             </div>
-            <img className="invert" src="option.svg" alt="" />
+            <img className="invert" onClick={() => {
+              moreOptions();
+            }} src="option.svg" alt="" />
           </div>
           <div
             style={{ justifyContent: "space-between", width: "10rem" }}
@@ -407,16 +406,15 @@ const Playing = ({
             />
             <img
               className="invert"
-              onClick={() => {}}
+              onClick={() => {
+                Sound();
+              }}
               style={{ height: "25px" }}
               src="volume.svg"
               alt=""
             />
           </div>
           <div
-            onClick={() => {
-              Sound();
-            }}
             className="vol"
           >
             <div
