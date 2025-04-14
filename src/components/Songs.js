@@ -5,7 +5,10 @@ import Nav from "./Nav";
 import Playing from "./Playing";
 
 const Songs = ({
-  setOpen, setOpen2, open2, isMobile,
+  setOpen,
+  setOpen2,
+  open2,
+  isMobile,
   open,
   selected,
   setSelected,
@@ -17,7 +20,11 @@ const Songs = ({
   q,
   r,
   g,
-  b, bgColor, setBgColor, ps, playing
+  b,
+  bgColor,
+  setBgColor,
+  ps,
+  playing,
 }) => {
   const recent = useSelector((state) => state.recentSlice.value);
   const vol = useSelector((state) => state.recentSlice.volume);
@@ -57,7 +64,7 @@ const Songs = ({
             }
           }
         });
-        setRes(results)
+        setRes(results);
       }
     },
     [songs]
@@ -81,9 +88,9 @@ const Songs = ({
 
   function handleClick(e, song) {
     handleQ(song);
-    const x = (e.clientX - e.currentTarget.offsetLeft)/e.currentTarget.offsetWidth;
-    const y = (e.clientY - e.currentTarget.offsetTop)/e.currentTarget.offsetHeight;
-    console.log(e.clientX, e.currentTarget.offsetLeft)
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
     const el = document.createElement("div");
     const title = song.title.replaceAll(" ", "");
     const id = song.id;
@@ -96,8 +103,8 @@ const Songs = ({
     }
     parent.style.backgroundColor = "#bebebe44";
     el.classList.add("circle");
-    el.style.left = `${x*100}%`;
-    el.style.top = `${y*100}%`;
+    el.style.left = `${x * 100}%`;
+    el.style.top = `${y * 100}%`;
     setTimeout(() => {
       el.remove();
     }, 1000);
@@ -113,22 +120,23 @@ const Songs = ({
     audioRef.current.volume = parseFloat(vol / 100);
     dispatch(updaterec(song));
     setPS(song);
-    if(isMobile){
-      setOpen2(true)
+    if (isMobile) {
+      setOpen2(true);
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     if (open2) {
-      document.querySelector(".playsm").style.transform = "translateY(0%)"
-    }else{
-      document.querySelector(".playsm").style.transform = "translateY(100%)"
+      document.querySelector(".playsm").style.transform = "translateY(0%)";
+    } else {
+      document.querySelector(".playsm").style.transform = "translateY(100%)";
     }
-  },[open2])
+  }, [open2]);
   return (
     <div className="songs" style={{ overflow: "hidden", position: "relative" }}>
       <div className="leftsm">
-        <Nav isMobile={isMobile}
+        <Nav
+          isMobile={isMobile}
           open={open}
           r={r}
           g={g}
@@ -139,8 +147,11 @@ const Songs = ({
       </div>
 
       <div className="playsm">
-        <Playing setOpen2={setOpen2} open2={open2}
-          ps={ps} isMobile={isMobile}
+        <Playing
+          setOpen2={setOpen2}
+          open2={open2}
+          ps={ps}
+          isMobile={isMobile}
           setPS={setPS}
           q={q}
           selected={selected}
@@ -153,7 +164,7 @@ const Songs = ({
         />
       </div>
 
-      <div style={{ position: "relative"}}>
+      <div style={{ position: "relative" }}>
         <h1>{selected}</h1>
         <img
           style={{ position: "absolute", top: "0rem", zIndex: "10" }}
@@ -178,7 +189,13 @@ const Songs = ({
           name=""
           id="search"
         />
-        <div onClick={()=>{sear(sinp)}} id="sicon" style={{ position: "absolute" }}>
+        <div
+          onClick={() => {
+            sear(sinp);
+          }}
+          id="sicon"
+          style={{ position: "absolute" }}
+        >
           <img src="search.svg" width={23} alt="" />
         </div>
       </div>
