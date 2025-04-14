@@ -192,7 +192,7 @@ const Songs = ({
           name=""
           id="search"
         />
-        <div id="sicon" style={{ position: "absolute" }}>
+        <div onClick={()=>{sear(sinp)}} id="sicon" style={{ position: "absolute" }}>
           <img src="search.svg" width={23} alt="" />
         </div>
       </div>
