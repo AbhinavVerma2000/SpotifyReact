@@ -75,19 +75,19 @@ const Playing = ({
           audioRef.current.load(); // just to be extra safe
           setPlaying(false);
         }
-        let audio = new Audio(q[currentIndex + 1].musicUrl);
-        setPS(q[currentIndex + 1]);
-        await audio.play();
-        dispatch(updaterec(q[currentIndex + 1]));
+        const audio = new Audio(q[currentIndex + 1].musicUrl);
         audioRef.current = audio;
         audioRef.current.volume = parseFloat(volume / 100);
+        setPS(q[currentIndex + 1]);
+        await audio.play();
         setPlaying(true);
-        let mysong = q[currentIndex + 1];
-        let title = mysong.title.replaceAll(" ", "");
-        let id = mysong.id;
-        let parent = document.querySelector(`#${title}${id}`);
-        let list = document.querySelector(".list");
-        let children = list.children;
+        dispatch(updaterec(q[currentIndex + 1]));
+        const mysong = q[currentIndex + 1];
+        const title = mysong.title.replaceAll(" ", "");
+        const id = mysong.id;
+        const parent = document.querySelector(`#${title}${id}`);
+        const list = document.querySelector(".list");
+        const children = list.children;
         for (let i = 0; i < children.length; i++) {
           children[i].style.background = "";
         }
@@ -107,19 +107,19 @@ const Playing = ({
         audioRef.current.load(); // just to be extra safe
         setPlaying(false);
       }
-      let audio = new Audio(q[currentIndex - 1].musicUrl);
-      setPS(q[currentIndex - 1]);
-      await audio.play();
-      dispatch(updaterec(q[currentIndex - 1]));
+      const audio = new Audio(q[currentIndex - 1].musicUrl);
       audioRef.current = audio;
       audioRef.current.volume = parseFloat(volume / 100);
+      setPS(q[currentIndex - 1]);
+      await audio.play();
       setPlaying(true);
-      let mysong = q[currentIndex - 1];
-      let title = mysong.title.replaceAll(" ", "");
-      let id = mysong.id;
-      let parent = document.querySelector(`#${title}${id}`);
-      let list = document.querySelector(".list");
-      let children = list.children;
+      dispatch(updaterec(q[currentIndex - 1]));
+      const mysong = q[currentIndex - 1];
+      const title = mysong.title.replaceAll(" ", "");
+      const id = mysong.id;
+      const parent = document.querySelector(`#${title}${id}`);
+      const list = document.querySelector(".list");
+      const children = list.children;
       for (let i = 0; i < children.length; i++) {
         children[i].style.background = "";
       }
@@ -181,47 +181,48 @@ const Playing = ({
           }%`;
         }
       });
+      audioRef.current.src = "";
+      audioRef.current.load();
       setPlaying(false);
     }
     if (!playing) {
-      await audio.play().then(() => {
-        setPlaying(true);
-        audioRef.current = audio;
-        audioRef.current.volume = parseFloat(volume / 100);
-        audioRef.current.currentTime = time;
-        audioRef.current.addEventListener("timeupdate", (e) => {
-          const seekbar = document.querySelectorAll(".seekbar");
-          if (open2 && isMobile) {
-            const skb1 = seekbar[0];
-            skb1.style.left = `${
-              parseFloat(
-                audioRef.current.currentTime / audioRef.current.duration
-              ) * 100
-            }%`;
-          } else {
-            const skb2 = seekbar[1];
-            skb2.style.left = `${
-              parseFloat(
-                audioRef.current.currentTime / audioRef.current.duration
-              ) * 100
-            }%`;
-          }
-          const currtime = document.querySelectorAll(".currtime");
-          if (open2 && isMobile) {
-            currtime[0].style.width = `${
-              parseFloat(
-                audioRef.current.currentTime / audioRef.current.duration
-              ) * 100
-            }%`;
-          } else {
-            currtime[1].style.width = `${
-              parseFloat(
-                audioRef.current.currentTime / audioRef.current.duration
-              ) * 100
-            }%`;
-          }
-        });
+      audioRef.current = audio;
+      audioRef.current.volume = parseFloat(volume / 100);
+      audioRef.current.currentTime = time;
+      audioRef.current.addEventListener("timeupdate", (e) => {
+        const seekbar = document.querySelectorAll(".seekbar");
+        if (open2 && isMobile) {
+          const skb1 = seekbar[0];
+          skb1.style.left = `${
+            parseFloat(
+              audioRef.current.currentTime / audioRef.current.duration
+            ) * 100
+          }%`;
+        } else {
+          const skb2 = seekbar[1];
+          skb2.style.left = `${
+            parseFloat(
+              audioRef.current.currentTime / audioRef.current.duration
+            ) * 100
+          }%`;
+        }
+        const currtime = document.querySelectorAll(".currtime");
+        if (open2 && isMobile) {
+          currtime[0].style.width = `${
+            parseFloat(
+              audioRef.current.currentTime / audioRef.current.duration
+            ) * 100
+          }%`;
+        } else {
+          currtime[1].style.width = `${
+            parseFloat(
+              audioRef.current.currentTime / audioRef.current.duration
+            ) * 100
+          }%`;
+        }
       });
+      await audio.play();
+      setPlaying(true);
     }
   };
 
