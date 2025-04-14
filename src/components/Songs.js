@@ -81,9 +81,9 @@ const Songs = ({
 
   function handleClick(e, song) {
     handleQ(song);
-    const x = (e.clientX - e.target.offsetLeft)/e.target.offsetWidth;
-    const y = (e.clientY - e.target.offsetTop)/e.target.offsetHeight;
-    console.log(e.clientX, e.target.offsetLeft)
+    const x = (e.clientX - e.currentTarget.offsetLeft)/e.currentTarget.offsetWidth;
+    const y = (e.clientY - e.currentTarget.offsetTop)/e.currentTarget.offsetHeight;
+    console.log(e.clientX, e.currentTarget.offsetLeft)
     const el = document.createElement("div");
     const title = song.title.replaceAll(" ", "");
     const id = song.id;
