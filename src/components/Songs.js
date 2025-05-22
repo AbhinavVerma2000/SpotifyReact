@@ -243,7 +243,7 @@ const Songs = ({
                 className="pic"
                 style={{
                   background: `url(${encodeURI(song.thumbnail)})`,
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   borderRadius: "100%",
                 }}
               >
