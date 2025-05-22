@@ -26,8 +26,8 @@ const BackgroundColorDiv = ({ bgColor, setBgColor, imageUrl }) => {
       style={{
         background: `url(${encodeURI(imageUrl)})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "contain"
+        // backgroundPosition: "center",
+        backgroundSize: "cover"
       }}
     />
       
