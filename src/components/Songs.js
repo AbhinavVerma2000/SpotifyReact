@@ -92,9 +92,8 @@ const Songs = ({
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
     const el = document.createElement("div");
-    const title = song.title.replaceAll(" ", "");
-    const id = song.id;
-    const parent = document.querySelector(`#${title}${id}`);
+    const title = song.title.replaceAll(" ", "").replace(/[^a-z0-9_-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+    const parent = document.querySelector(`#${title}`);
     parent.appendChild(el);
     const list = document.querySelector(".list");
     const children = list.children;
@@ -210,7 +209,7 @@ const Songs = ({
             <div
               key={song.id}
               onClick={(e) => handleClick(e, song)}
-              id={song.title.replaceAll(" ", "") + song.id}
+              id={song.title.replaceAll(" ", "").replaceAll("(", "").replaceAll(")", "")}
               className="song"
             >
               <div
@@ -237,16 +236,19 @@ const Songs = ({
               onClick={(e) => {
                 handleClick(e, song);
               }}
-              id={song.title.replaceAll(" ", "") + song.id}
+              id={song.title.replaceAll(" ", "").replace(/[^a-z0-9_-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}
               className="song"
             >
               <div
                 className="pic"
                 style={{
-                  background: `url(${song.thumbnail})`,
+                  background: `url(${encodeURI(song.thumbnail)})`,
                   backgroundSize: "cover",
+                  borderRadius: "100%",
                 }}
-              />
+              >
+                {/* <img src={encodeURI(song.thumbnail)} style={{height:"50px", width:"50px", borderRadius:"100%" }} alt="" /> */}
+              </div>
               <div className="details">
                 <p style={{ fontSize: "1.2rem" }}>{song.title}</p>
                 <p className="album2">{song.artistName}</p>
@@ -266,7 +268,7 @@ const Songs = ({
             <div
               key={song.id}
               onClick={(e) => handleClick(e, song)}
-              id={song.title.replaceAll(" ", "") + song.id}
+              id={song.title.replaceAll(" ", "").replaceAll("(", "").replaceAll(")", "")}
               className="song"
             >
               <div
@@ -293,7 +295,7 @@ const Songs = ({
             <div
               key={song.id}
               onClick={(e) => handleClick(e, song)}
-              id={song.title.replaceAll(" ", "") + song.id}
+              id={song.title.replaceAll(" ", "").replaceAll("(", "").replaceAll(")", "")}
               className="song"
             >
               <div
