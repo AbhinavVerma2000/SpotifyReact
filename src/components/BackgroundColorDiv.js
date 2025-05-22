@@ -29,9 +29,8 @@ const BackgroundColorDiv = ({ bgColor, setBgColor, imageUrl }) => {
         backgroundPosition: "center",
         backgroundSize: "cover"
       }}
-      {/* <img src={encodeURI(imageUrl)} style={{height:"100%", width:"100%"}} alt="" /> */}
-    // </div>
     />
+      
   );
 };
 
