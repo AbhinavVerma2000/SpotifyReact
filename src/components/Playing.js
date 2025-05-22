@@ -83,9 +83,8 @@ const Playing = ({
         setPlaying(true);
         dispatch(updaterec(q[currentIndex + 1]));
         const mysong = q[currentIndex + 1];
-        const title = mysong.title.replaceAll(" ", "");
-        const id = mysong.id;
-        const parent = document.querySelector(`#${title}${id}`);
+        const title = mysong.title.replaceAll(" ", "").replace(/[^a-z0-9_-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+        const parent = document.querySelector(`#${title}`);
         const list = document.querySelector(".list");
         const children = list.children;
         for (let i = 0; i < children.length; i++) {
@@ -115,9 +114,8 @@ const Playing = ({
       setPlaying(true);
       dispatch(updaterec(q[currentIndex - 1]));
       const mysong = q[currentIndex - 1];
-      const title = mysong.title.replaceAll(" ", "");
-      const id = mysong.id;
-      const parent = document.querySelector(`#${title}${id}`);
+      const title = mysong.title.replaceAll(" ", "").replace(/[^a-z0-9_-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+      const parent = document.querySelector(`#${title}`);
       const list = document.querySelector(".list");
       const children = list.children;
       for (let i = 0; i < children.length; i++) {
