@@ -27,7 +27,7 @@ const BackgroundColorDiv = ({ bgColor, setBgColor, imageUrl }) => {
         background: `url(${encodeURI(imageUrl)})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundSize: "cover"
+        backgroundSize: "contain"
       }}
     >
       {/* <img src={encodeURI(imageUrl)} style={{height:"100%", width:"100%"}} alt="" /> */}
