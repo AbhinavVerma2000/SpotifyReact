@@ -24,7 +24,7 @@ const BackgroundColorDiv = ({ bgColor, setBgColor, imageUrl }) => {
       ref={divRef}
       className="rounded thumbnail"
       style={{
-        background: `url(${encodeURI(imageUrl)})`,
+        backgroundImage: `url(${encodeURI(imageUrl)})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "contain"
