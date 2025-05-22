@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import ColorThief from 'color-thief-browser';
+import React, { useEffect, useRef } from "react";
+import ColorThief from "color-thief-browser";
 
-const BackgroundColorDiv = ({bgColor, setBgColor, imageUrl }) => {
+const BackgroundColorDiv = ({ bgColor, setBgColor, imageUrl }) => {
   const divRef = useRef(null);
 
   useEffect(() => {
     const div = divRef.current;
     const colorThief = new ColorThief();
-    
+
     // Wait for the image to load before extracting color
     const img = new Image();
-    img.crossOrigin = 'Anonymous'; // To handle CORS issues
-    img.src = imageUrl;
+    img.crossOrigin = "Anonymous"; // To handle CORS issues
+    img.src = encodeURI(imageUrl);
 
     img.onload = () => {
       const dominantColor = colorThief.getColor(img);
@@ -20,14 +20,17 @@ const BackgroundColorDiv = ({bgColor, setBgColor, imageUrl }) => {
   }, [imageUrl, setBgColor]);
 
   return (
-    <div ref={divRef}
-          className="rounded thumbnail"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center"
-          }}
-        />
+    <div
+      ref={divRef}
+      className="rounded thumbnail"
+      style={{
+        background: `url(${encodeURI(imageUrl)})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* <img src={encodeURI(imageUrl)} style={{height:"100%", width:"100%"}} alt="" /> */}
+    </div>
   );
 };
 
